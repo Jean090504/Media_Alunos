@@ -6,10 +6,10 @@ public class Calculadora {
     private float nota1;
     private float nota2;
     private float nota3;
-    private float peso1;
-    private float peso2;
-    private float peso3;
-    private float media;
+    private float pesoNota1;
+    private float pesoNota2;
+    private float pesoNota3;
+    private float mediaFinal;
     private String resultado;
 
 
@@ -24,19 +24,19 @@ public class Calculadora {
         nota1 = leitorFloat.nextFloat();
 
         System.out.print("Insira o peso da primeira nota do Aluno: ");
-        peso1 = leitorFloat.nextFloat();
+        pesoNota1 = leitorFloat.nextFloat();
 
         System.out.print("Insira a segunda nota do Aluno: ");
         nota2 = leitorFloat.nextFloat();
 
         System.out.print("Insira o peso da segunda nota do Aluno: ");
-        peso2 = leitorFloat.nextFloat();
+        pesoNota2 = leitorFloat.nextFloat();
 
         System.out.print("Insira a terceira nota do Aluno: ");
         nota3 = leitorFloat.nextFloat();
 
         System.out.print("Insira o peso da terceira nota do Aluno: ");
-        peso3 = leitorFloat.nextFloat();
+        pesoNota3 = leitorFloat.nextFloat();
 
         calcularDados();
 
@@ -45,11 +45,11 @@ public class Calculadora {
 
 
     private void calcularDados(){
-        media = (nota1 * peso1 + nota2 * peso2 + nota3 * peso3) / (peso1 + peso2 + peso3);
+        mediaFinal = (nota1 * pesoNota1 + nota2 * pesoNota2 + nota3 * pesoNota3) / (pesoNota1 + pesoNota2 + pesoNota3);
 
-        if (media >= 7){
+        if (mediaFinal >= 7){
             resultado = "APROVADO";
-        } else if (media >=5 && media < 7){
+        } else if (mediaFinal >=5 && mediaFinal < 7){
             resultado = "RECUPERAÇÃO";
         } else{
             resultado = "REPROVADO";
@@ -62,7 +62,7 @@ public class Calculadora {
     private void exibirDados(){
         System.out.println("*****************************");
         System.out.println("NOME DO ALUNO: " + nome);
-        System.out.printf("MÉDIA DO ALUNO: %.2f\n", media);
+        System.out.printf("MÉDIA DO ALUNO: %.2f\n", mediaFinal);
         System.out.println("SITUAÇÃO DO ALUNO: " + resultado);
         System.out.println("*****************************");
     }
